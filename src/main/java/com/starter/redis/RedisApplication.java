@@ -20,12 +20,16 @@ public class RedisApplication {
 	private boolean jobEnable;
 	@Scheduled(cron = "${cron.expression}")
 	public void runEvey15Seconds() {
-		if(jobEnable){
+		/*if(jobEnable){
 			logger.info("LOG:: cron executed");
 			LocalTime fromTime = LocalTime.now();
 			logger.info("LOG:: fromTime:: " + fromTime);
 			logger.info("LOG:: Current time is :: " + LocalDate.now());
-		}
+		}*/
+		logger.info("LOG:: cron executed");
+		LocalTime fromTime = LocalTime.now();
+		logger.info("LOG:: fromTime:: " + fromTime);
+		logger.info("LOG:: Current time is :: " + LocalDate.now());
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(RedisApplication.class, args);
